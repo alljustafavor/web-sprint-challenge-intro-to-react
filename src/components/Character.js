@@ -3,8 +3,13 @@ import { ReactDOM } from 'react';
 import axios from 'axios';
  
 
-const Characters = ({ props }) => {
-
+export default function Characters(props) {
+    return (
+        <>
+        {props.characters.map(char => {
+            return <h1>{char.name}</h1>
+        })}
+        </>
+    )
+        
 }
-
-export default Characters
