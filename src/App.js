@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { ReactDOM } from 'react';
 import axios from 'axios';
 import Characters from './components/Character';
+import { ThemeProvider } from 'styled-components';
+import theme from './theme';
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -24,10 +26,12 @@ const App = () => {
 
 
   return (
-    <div className="App">
-      <h1 className="Header">Characters</h1>
-      <Characters characters={characters} />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <h1 className="Header">Characters</h1>
+        <Characters characters={characters} />
+      </div>
+    </ThemeProvider>  
   );
 }
 
